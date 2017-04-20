@@ -1,0 +1,7 @@
+---
+hostname: 127.0.0.1
+port: '2222'
+username: vagrant
+ssh_key: "/home/ccoffey/repos/yacmt/.kitchen/kitchen-vagrant/kitchen-yacmt-default-ubuntu-1604/.vagrant/machines/default/virtualbox/private_key"
+last_action: setup
+last_error: Kitchen::ActionFailed
