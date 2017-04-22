@@ -1,0 +1,7 @@
+.kitchen/logs
+.kitchen/logs/*
+.kitchen/kitchen-vagrant/
+.kitchen/kitchen-vagrant/*
+test/integration/default/.kitchen
+test/integration/default/.kitchen/*
+*.swp
