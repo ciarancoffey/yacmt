@@ -1,5 +1,5 @@
-.kitchen/logs
-.kitchen/logs/*
+.kitchen/
+.kitchen/*
 .kitchen/kitchen-vagrant/
 .kitchen/kitchen-vagrant/*
 test/integration/default/.kitchen
