@@ -10,7 +10,7 @@
     [ "$result" -eq 200 ]
 }
 
-@test "Host responds with Hello, World" {
+@test "Host responds with Hello, world!" {
     result="$(curl -s localhost)"
     [ "$result" = "Hello, world!" ]
 }
