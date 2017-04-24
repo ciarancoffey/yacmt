@@ -7,3 +7,5 @@ notes.md
 test/integration/default/.kitchen
 test/integration/default/.kitchen/*
 *.swp
+/yacmt/__pycache__/
+/yacmt/__pycache__/*
