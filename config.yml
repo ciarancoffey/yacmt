@@ -30,6 +30,11 @@
     /etc/nginx/sites-enabled/default:
       symlink: /etc/nginx/sites-enabled/default
 - server: ssh.ccoffey.ie
-  ip: ssh.ccoffey.ie
-  vendor: arch
-  version: rolling
+  connection:
+    ip: 127.0.0.1
+    port: 2202
+    username: root
+    password: 32768
+  os:
+    vendor: arch
+    version: rolling
