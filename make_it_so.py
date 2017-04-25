@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 import os
-import hashlib
-from functools import partial
 from yacmt import host_connection
 from yacmt import load_yaml
+from yacmt import md5sum
 
 CONFIG_FILE="./config.yml"
 connection_pool = {}
@@ -66,15 +65,9 @@ def check_files(node):
 #check the path exists
 #check the md5sum remotly
             local_file = (metadata["source"])
-            #print(md5sum(local_file))
+            print(md5sum.md5.get(local_file))
 #compare the sums
 
-def md5sum(filename):
-    with open(filename, mode='rb') as f:
-        d = hashlib.md5()
-        for buf in iter(partial(f.read, 128), b''):
-            d.update(buf)
-    return d.hexdigest()
 
 for node in config:
     if node["os"]["vendor"] in ["debian","ubuntu"]:
