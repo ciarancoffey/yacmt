@@ -6,7 +6,7 @@
     ip: 127.0.0.1
     port: 2200
     username: root
-    password: 32768
+    password: password
   installed:
     - nginx
     - php5-common 
@@ -28,8 +28,12 @@
       owner: root
       group: root
       perms: 644
+      on_change:
+        restart: nginx
     /etc/nginx/sites-enabled/default:
-      symlink: /etc/nginx/sites-enabled/default
+      symlink: /etc/nginx/sites-available/default
+      on_change:
+        restart: nginx
 - server: italy
   connection:
     ip: notaserver.ccoffey.ie
