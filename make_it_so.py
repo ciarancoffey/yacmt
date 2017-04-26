@@ -82,8 +82,6 @@ def check_files(node):
 def replace_file(node, src_file, dest_file, metadata):
     tempFile = connection_pool[node["server"]].run_command("mktemp")[0].rstrip()
     print("Installing", dest_file)
-    #putfile to temp
-    #install the file
     connection_pool[node["server"]].put_file(src_file, tempFile)
     try:
         owner=metadata["owner"]
@@ -142,16 +140,12 @@ def get_remote_md5sum(node, filename, metadata):
 
 def restart_service(node, service):
     if node["os"]["vendor"] in ["debian","ubuntu"]:
-        print(node["os"]["version"])
         if str(node["os"]["version"]) in ["14.04","12.04"]:
             connection_pool[node["server"]].run_command(
                 "service " + service + " restart")
         if str(node["os"]["version"]) in ["16.04","16.10"]:
             connection_pool[node["server"]].run_command(
                 "systemctl restart " + service)
-#check it exists
-#check the path exists
-
 
 for node in config:
     if node["os"]["vendor"] in ["debian","ubuntu"]:
